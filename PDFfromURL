@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen
 from urllib.parse import urlparse
-import os, re, time, pyautogui as pag
+import os, re, time, pyperclip, pyautogui as pag
 
 os.chdir(r'C:\Users\lstsuser03\Documents\My Python Projects\ITS')
 my_url = r'ftp://itsalgo:itSAlgo!2020@datasrv.org/Files/'
