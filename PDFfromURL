@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen
 from urllib.parse import urlparse
 import os, re, time, pyperclip, pyautogui as pag
@@ -8,9 +8,9 @@ my_url = r'ftp://itsalgo:itSAlgo!2020@datasrv.org/Files/'
 
 links = []
 html = urlopen(my_url).read()
-html_page = BeautifulSoup(html, features='html.parser') 
+html_page = bs(html, features='html.parser') 
 html_str = str(html_page)
-urls=re.findall(r'[\w\d\-&;\(\),.]+\.pdf', html_str)
+urls=re.findall(r'\S+\.pdf', html_str)
 
 pag.hotkey('win', '1')
 time.sleep(1)
